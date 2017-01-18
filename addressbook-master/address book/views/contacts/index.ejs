@@ -1,0 +1,35 @@
+<h2>All Contacts</h2>
+<table class="order-table table">
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Address</th>
+  </tr>
+</thead>
+
+  <% contacts.forEach(function(contact) { %>
+    <tbody>
+      <tr>
+        <td>
+          <a href="/contacts/<%= contact.id %>">
+            <%= contact.name %>
+          </a>
+        </td>
+        <td><%= contact.phone_number %></td>
+        <td><%= contact.address %></td>
+        <td>
+          <a href="/contacts/<%= contact.id %>/edit">Edit</a>
+        </td>
+        <td>
+          <form method="post" action="/contacts/<%= contact.id %>">
+            <input type="hidden" name="_method" value="delete">
+            <button>Delete</button>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  <% }) %>
+  </table>
+
+

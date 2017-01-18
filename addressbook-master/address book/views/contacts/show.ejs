@@ -1,0 +1,15 @@
+<h2><%= contact.name %></h2>
+<div id="addressbook">
+<ul>
+  <li><%= contact.name %></li>
+  <li><%= contact.phone_number %></li>
+  <li><%= contact.address %></li>
+  <li><a href="/contacts/<%= contact.id %>/edit">Edit</a></li>
+  <li>
+    <form method="post" action="/contacts/<%= contact.id %>">
+      <input type="hidden" name="_method" value="delete">
+      <button>Delete</button>
+    </form>
+  </li>
+</ul>
+</div>
